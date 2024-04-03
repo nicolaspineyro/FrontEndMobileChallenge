@@ -1,8 +1,8 @@
 import React from 'react';
-import {SafeAreaView} from 'react-native';
+import RootDrawerNavigator from 'src/navigation/navigators/RootDrawerNavigator';
 
 function App(): React.JSX.Element {
-  return <SafeAreaView></SafeAreaView>;
+  return <RootDrawerNavigator />;
 }
 
 export default App;
