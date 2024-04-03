@@ -1,13 +1,13 @@
+import {Text, View} from 'react-native';
+
 import {ParamListBase, useNavigation} from '@react-navigation/native';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
-import {Text, View} from 'react-native';
+
 import {Button} from 'src/components/ui';
-import {ROUTES} from 'src/navigation/Routes';
 
-const HomeScreen = () => {
+const YourCartScreen = () => {
   const navigation = useNavigation<NativeStackNavigationProp<ParamListBase>>();
-  const handlePress = () => navigation.navigate(ROUTES.HOME.screens[1].name);
-
+  const handlePress = () => navigation.navigate('Item Details');
   return (
     <View
       style={{
@@ -16,10 +16,12 @@ const HomeScreen = () => {
         paddingHorizontal: 30,
         gap: 20,
       }}>
-      <Text style={{fontSize: 22, letterSpacing: 2.5}}>{'Home Screen'}</Text>
-      <Button onPress={handlePress} title={'Go to Screen1'} />
+      <Text style={{fontSize: 22, letterSpacing: 2.5}}>
+        {'Your Cart Screen'}
+      </Text>
+      <Button onPress={handlePress} title={'Go to Item Details'} />
     </View>
   );
 };
 
-export default HomeScreen;
+export default YourCartScreen;

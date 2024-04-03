@@ -44,7 +44,9 @@ const DrawerNavigatorContent = (props: DrawerContentComponentProps) => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Beka</Text>
+      <Text style={styles.title} onPress={navigation.closeDrawer}>
+        Beka
+      </Text>
       <FlatList
         data={state.routes}
         renderItem={renderButtons}
@@ -66,24 +68,25 @@ const DrawerNavigatorContent = (props: DrawerContentComponentProps) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    display: 'flex',
-    paddingVertical: 120,
     paddingLeft: 20,
+    paddingTop: 100,
+    paddingBottom: 150,
     gap: 40,
   },
   title: {
-    fontSize: 30,
+    fontSize: 25,
     color: 'white',
     fontWeight: '800',
     textAlign: 'center',
   },
   navButton: {
-    margin: 2.5,
+    paddingRight: 20,
+    margin: 10,
     borderRadius: 15,
     justifyContent: 'flex-start',
     backgroundColor: Colors.transparent,
   },
-  navButtonText: {fontSize: 20},
+  navButtonText: {fontSize: 22, marginLeft: 5},
 });
 
 export default DrawerNavigatorContent;

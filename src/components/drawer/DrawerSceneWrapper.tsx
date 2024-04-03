@@ -10,16 +10,16 @@ const DrawerSceneWrapper = ({children}: {children: ReactNode}) => {
     return {
       transform: [
         {
-          translateY: interpolate(progress.value, [0, 1], [0, 15], 'clamp'),
+          translateY: interpolate(progress.value, [0, 1], [0, 12.5], 'clamp'),
         },
         {
-          translateX: interpolate(progress.value, [0, 1], [0, 75], 'clamp'),
+          translateX: interpolate(progress.value, [0, 1], [0, 42.5], 'clamp'),
         },
         {
           rotateZ: `${interpolate(
             progress.value,
             [0, 1],
-            [0, -10],
+            [0, -7],
             'clamp',
           )}deg`,
         },

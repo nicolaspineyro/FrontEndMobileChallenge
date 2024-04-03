@@ -24,7 +24,7 @@ const RootDrawerNavigator = () => {
       item => item?.status === 'open',
     );
     animatedPadding.value = withTiming(
-      drawerOpen ? (Platform.OS === 'ios' ? 55 : 20) : 0,
+      drawerOpen ? (Platform.OS === 'ios' ? 50 : 20) : 0,
       {
         duration: 200,
       },

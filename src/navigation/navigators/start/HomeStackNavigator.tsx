@@ -9,6 +9,7 @@ const HomeStackNavigator = () => {
     <Stack.Navigator
       screenOptions={{
         header: options => <DrawerNavigationHeader {...options} />,
+        animation: 'simple_push',
       }}>
       {ROUTES.HOME.screens.map((route, index) => (
         <Stack.Screen

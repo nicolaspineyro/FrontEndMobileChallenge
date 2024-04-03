@@ -39,7 +39,7 @@ const Button = ({
 const styles = StyleSheet.create({
   button: {
     backgroundColor: '#42a5f5',
-    padding: 20,
+    padding: 13,
     borderRadius: 5,
     flexDirection: 'row',
     justifyContent: 'center',
