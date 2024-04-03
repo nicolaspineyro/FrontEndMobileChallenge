@@ -1,5 +1,6 @@
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {ROUTES} from 'navigation/Routes';
+import DrawerNavigationHeader from 'src/components/drawer/DrawerNavigationHeader';
 import DrawerSceneWrapper from 'src/components/drawer/DrawerSceneWrapper';
 
 const Tab = createBottomTabNavigator();
@@ -7,7 +8,10 @@ const Tab = createBottomTabNavigator();
 const StartTabNavigator = () => {
   return (
     <DrawerSceneWrapper>
-      <Tab.Navigator>
+      <Tab.Navigator
+        screenOptions={{
+          header: options => <DrawerNavigationHeader {...options} />,
+        }}>
         {ROUTES.START.screens.map((route, index) => (
           <Tab.Screen
             key={`tab-start-${index}`}
