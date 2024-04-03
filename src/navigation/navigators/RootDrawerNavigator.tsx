@@ -4,6 +4,7 @@ import {
   createDrawerNavigator,
 } from '@react-navigation/drawer';
 import {ROUTES} from 'navigation/Routes';
+import {Colors} from 'src/navigation/utils/Colors';
 
 const Drawer = createDrawerNavigator();
 
@@ -25,6 +26,16 @@ const RootDrawerNavigator = () => {
 
 const DRAWER_SCREEN_OPTIONS: DrawerNavigationOptions = {
   drawerType: 'back',
+  headerShown: false,
+  overlayColor: 'transparent',
+  drawerStatusBarAnimation: 'none',
+  drawerStyle: {
+    backgroundColor: Colors.purple,
+    width: '50%',
+    borderTopLeftRadius: 40,
+  },
+  sceneContainerStyle: {
+    backgroundColor: Colors.purple,
+  },
 };
-
 export default RootDrawerNavigator;
