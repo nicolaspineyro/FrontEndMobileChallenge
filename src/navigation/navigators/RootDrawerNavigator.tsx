@@ -7,8 +7,12 @@ import {
 } from '@react-navigation/drawer';
 import {useSharedValue, withTiming} from 'react-native-reanimated';
 
+import {
+  DrawerNavigationWrapper,
+  DrawerNavigatorContent,
+} from 'src/components/drawer';
+
 import {ROUTES} from 'navigation/Routes';
-import DrawerNavigationWrapper from 'src/components/drawer/DrawerNavigationWrapper';
 import {Colors} from 'src/utils/Colors';
 
 const Drawer = createDrawerNavigator();
@@ -34,6 +38,7 @@ const RootDrawerNavigator = () => {
           screenListeners={{
             state: triggerAnimation,
           }}
+          drawerContent={DrawerNavigatorContent}
           screenOptions={DRAWER_SCREEN_OPTIONS}>
           {ROUTES.ROOT.navigators.map((route, index) => (
             <Drawer.Screen
