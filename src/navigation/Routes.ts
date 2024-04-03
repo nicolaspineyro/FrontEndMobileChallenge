@@ -25,6 +25,9 @@ export const START_SCREENS = [
     name: 'Home',
     component: HomeStackNavigator,
     icon: faHouse,
+    options: {
+      headerShown: false,
+    },
   },
   {
     name: 'Search',

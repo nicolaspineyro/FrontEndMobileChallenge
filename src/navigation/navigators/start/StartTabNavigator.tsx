@@ -13,6 +13,7 @@ const StartTabNavigator = () => {
             key={`tab-start-${index}`}
             name={route.name}
             component={route.component}
+            options={route.options}
           />
         ))}
       </Tab.Navigator>
