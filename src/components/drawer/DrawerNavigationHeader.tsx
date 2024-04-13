@@ -3,6 +3,7 @@ import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
 import {BottomTabHeaderProps} from '@react-navigation/bottom-tabs';
 import {DrawerHeaderProps, useDrawerProgress} from '@react-navigation/drawer';
 import {NativeStackHeaderProps} from '@react-navigation/native-stack';
+import {memo} from 'react';
 import {Platform, StyleSheet, Text, TouchableOpacity} from 'react-native';
 import Animated, {interpolate, useAnimatedStyle} from 'react-native-reanimated';
 
@@ -64,4 +65,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default DrawerNavigationHeader;
+export default memo(DrawerNavigationHeader);

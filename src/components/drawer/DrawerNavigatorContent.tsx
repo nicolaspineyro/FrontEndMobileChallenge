@@ -1,5 +1,5 @@
 import {FlatList, StyleSheet, Text, View} from 'react-native';
-import {useCallback} from 'react';
+import {memo, useCallback} from 'react';
 
 import {DrawerContentComponentProps} from '@react-navigation/drawer';
 
@@ -9,17 +9,15 @@ import {Colors} from 'src/utils/Colors';
 const DrawerNavigatorContent = (props: DrawerContentComponentProps) => {
   const {state, navigation} = props;
 
-  const handlePress = useCallback(
-    (route: string) =>
-      navigation.reset({
-        index: 0,
-        routes: [{name: route}],
-      }),
-    [navigation],
-  );
+  const handlePress = (route: string) =>
+    navigation.reset({
+      index: 0,
+      routes: [{name: route}],
+    });
+
   const handleSignOut = () => {};
 
-  const renderButtons = (props: any) => {
+  const renderButtons = useCallback((props: any) => {
     const {item, index} = props;
     return (
       <Button
@@ -40,7 +38,7 @@ const DrawerNavigatorContent = (props: DrawerContentComponentProps) => {
         ]}
       />
     );
-  };
+  }, []);
 
   return (
     <View style={styles.container}>
@@ -89,4 +87,4 @@ const styles = StyleSheet.create({
   navButtonText: {fontSize: 22, marginLeft: 5},
 });
 
-export default DrawerNavigatorContent;
+export default memo(DrawerNavigatorContent);

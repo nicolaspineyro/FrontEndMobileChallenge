@@ -30,7 +30,6 @@ const RootDrawerNavigator = () => {
       },
     );
   };
-
   return (
     <DrawerNavigationWrapper animatedPadding={animatedPadding}>
       <NavigationContainer>
@@ -38,7 +37,7 @@ const RootDrawerNavigator = () => {
           screenListeners={{
             state: triggerAnimation,
           }}
-          drawerContent={DrawerNavigatorContent}
+          drawerContent={props => <DrawerNavigatorContent {...props} />}
           screenOptions={DRAWER_SCREEN_OPTIONS}>
           {ROUTES.ROOT.navigators.map((route, index) => (
             <Drawer.Screen
