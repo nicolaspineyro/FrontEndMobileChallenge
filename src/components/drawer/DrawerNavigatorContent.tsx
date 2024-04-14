@@ -17,28 +17,31 @@ const DrawerNavigatorContent = (props: DrawerContentComponentProps) => {
 
   const handleSignOut = () => {};
 
-  const renderButtons = useCallback((props: any) => {
-    const {item, index} = props;
-    return (
-      <Button
-        onPress={() => handlePress(item.name)}
-        title={item.name}
-        style={[
-          styles.navButton,
-          {
-            backgroundColor:
-              index === state.index ? Colors.blurpink : Colors.transparent,
-          },
-        ]}
-        textStyle={[
-          styles.navButtonText,
-          {
-            color: index === state.index ? Colors.pink : Colors.white,
-          },
-        ]}
-      />
-    );
-  }, []);
+  const renderButtons = useCallback(
+    (props: any) => {
+      const {item, index} = props;
+      return (
+        <Button
+          onPress={() => handlePress(item.name)}
+          title={item.name}
+          style={[
+            styles.navButton,
+            {
+              backgroundColor:
+                index === state.index ? Colors.blurpink : Colors.transparent,
+            },
+          ]}
+          textStyle={[
+            styles.navButtonText,
+            {
+              color: index === state.index ? Colors.pink : Colors.white,
+            },
+          ]}
+        />
+      );
+    },
+    [state.index],
+  );
 
   return (
     <View style={styles.container}>
